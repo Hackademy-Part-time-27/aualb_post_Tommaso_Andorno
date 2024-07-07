@@ -52,7 +52,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="tags" class="form-label">Tags</label>
+                        <label for="tags" class="form-label">Tags:</label>
                         <input type="text" name="tags" class="form-control" id="tags" value="{{old('tags')}}">
                         <span class="small text-muted fst-italic">Dividi ogni tag con una virgola</span>
                         @error('tags')
