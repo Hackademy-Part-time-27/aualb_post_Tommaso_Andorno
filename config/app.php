@@ -128,6 +128,8 @@ return [
     'providers' => ServiceProvider::defaultProviders()->merge([
         
         App\Providers\FortifyServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
     ])->toArray(),
 

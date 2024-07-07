@@ -24,6 +24,7 @@
                         <a href="{{route('article.index')}}" class="btn btn-info text-white my-5">Vai alla lista degli articoli</a>
                     </div>
                     <div class="d-flex justify-content-between">
+                    <form>
                         @if (Auth::user() && Auth::user()->is_revisor)
                         <form action="{{route('revisor.acceptArticle', $article)}}" method="POST">
                         @csrf
