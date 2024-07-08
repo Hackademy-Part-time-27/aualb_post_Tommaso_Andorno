@@ -57,8 +57,6 @@ class PublicController extends Controller implements HasMiddleware
         }
 
         $user->update();
-
-        
         return redirect(route('homepage'))->with('message','Mail inviata con successo!');
 
         

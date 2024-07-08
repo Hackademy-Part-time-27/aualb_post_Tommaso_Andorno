@@ -14,8 +14,20 @@ class Article extends Model
     use HasFactory, Searchable;
 
     protected $fillable = [
-        'title', 'subtitle', 'body', 'image', 'user_id', 'category_id', 'is_accepted',
+        'title', 'subtitle', 'body', 'image', 'user_id', 'category_id', 'is_accepted', 'slug',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function readDuration(){
+        $totalWords = str_word_count($this->body);
+        $minutesToRead = round($totalWords /200);
+
+        return intval($minutesToRead);
+    }
 
     public function toSearchableArray(){
         return [

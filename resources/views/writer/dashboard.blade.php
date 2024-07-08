@@ -15,7 +15,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h2>Articoli in attesa di revisione</h2>
-                <x-writer-articles-table :articles="$unrevisionedArticles"/>
+                <x-writer-articles-table :articles="$unrevisonedArticles"/>
             </div>
         </div>
     </div>

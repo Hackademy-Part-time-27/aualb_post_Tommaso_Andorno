@@ -29,7 +29,7 @@
           </a>
           <ul class="dropdown-menu">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('careers.submit')}}">Lavora con noi</a>
+              <a class="nav-link active" aria-current="page" href="{{route('careers')}} ">Lavora con noi</a>
             </li>  
             <li class="nav-item">
               <form action="{{ route('logout') }}" id="logout-form" method="POST">

@@ -8,14 +8,7 @@
     </div>
     <div class="container my-5">
         <div class="row justify-content-center align-items-center border rounded p- shadow">
-            <div class="col-12 col-md-6 p-5">
-                <h2>Lavora come amministratore</h2>
-                <p>Scegliendo di lavorare come amministratore, ti occuperai di gestire le richieste di lavoro e di aggiungere e modificare le categorie.</p>
-                <h2>Lavora come revisore</h2>
-                <p>Scegliendo di lavorare come revisore, deciderai se un articolo può essere pubblicato o meno sulla piattaforma.</p>
-                <h2>Lavora come redattore</h2>
-                <p>Scegliendo di lavorare come redattore potrai scrivere gli articoli che saranno pubblicati.</p>
-            </div>
+            
             <div class="col-12 col-md-6">
                 <form action="{{route('careers.submit')}}" method="POST" class="card p-5 shadow">
                     @csrf
@@ -56,7 +49,14 @@
                     </div>
                 </form>
             </div>
-           
+            <div class="col-12 col-md-6 p-5">
+                <h2>Lavora come amministratore</h2>
+                <p>Scegliendo di lavorare come amministratore, ti occuperai di gestire le richieste di lavoro e di aggiungere e modificare le categorie.</p>
+                <h2>Lavora come revisore</h2>
+                <p>Scegliendo di lavorare come revisore, deciderai se un articolo può essere pubblicato o meno sulla piattaforma.</p>
+                <h2>Lavora come redattore</h2>
+                <p>Scegliendo di lavorare come redattore potrai scrivere gli articoli che saranno pubblicati.</p>
+            </div>
         </div>
     </div>
 </x-layout>

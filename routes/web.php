@@ -8,8 +8,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
 
 Route::get('/', [PublicController::class,'homepage'])->name('homepage');
+
 Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/article/show/{article:slug}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/user/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');
 Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
@@ -23,7 +24,7 @@ Route::middleware('admin')->group(function () {
     Route::patch('/admin/{user}/set-writer', [AdminController::class,'setWriter'])->name('admin.setWriter');
     Route::put('/admin/edit/{tag}/tag', [AdminController::class,'editTag'])->name('admin.editTag');
     Route::delete('/admin/delete/{tag}/tag', [AdminController::class,'deleteTag'])->name('admin.deleteTag');
-    Route::put('/admin/edit/{category/category}', [AdminController::class,'editCategory'])->name('admin.editCategory');
+    Route::put('/admin/edit/{category}/category', [AdminController::class,'editCategory'])->name('admin.editCategory');
     Route::delete('/admin/delete/{category}/category', [AdminController::class,'deleteCategory'])->name('admin.deleteCategory');
     Route::post('/admin/category/store', [AdminController::class,'storeCategory'])->name('admin.storeCategory');
 });
