@@ -11,10 +11,10 @@ class WriterController extends Controller
     public function dashboard(){
         $articles = Auth::user()->articles()->orderBy('created_at', 'desc')->get();
         
-        $unrevisonedArticles = $articles->where('is_accepted', '===', NULL);
+        $unrevisionedArticles = $articles->where('is_accepted', '===', FALSE);
         $acceptedArticles = $articles->where('is_accepted', true);
         $rejectedArticles = $articles->where('is_accepted', '===', 0);
 
-        return view('writer.dashboard', compact('unrevisionedArticles','acceptedArticles','rejectedArticles',));
+        return view('writer.dashboard',compact('unrevisionedArticles','acceptedArticles','rejectedArticles'));
     }
 }

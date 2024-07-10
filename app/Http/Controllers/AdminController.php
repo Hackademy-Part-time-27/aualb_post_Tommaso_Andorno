@@ -22,7 +22,7 @@ class AdminController extends Controller
         $user->save();
 
 
-        return redirect(route('admin.dashboard'))->with('message','Hai reso $user->name amministratore');
+        return redirect(route('admin.dashboard'))->with('message',"Hai reso $user->name amministratore");
     }
 
     public function setRevisor(User $user){
@@ -30,7 +30,7 @@ class AdminController extends Controller
         $user->save();
 
 
-        return redirect(route('admin.dashboard'))->with('message','Hai reso $user->name revisore');
+        return redirect(route('admin.dashboard'))->with('message',"Hai reso $user->name revisore");
     }
 
     public function setWriter(User $user){
@@ -38,7 +38,7 @@ class AdminController extends Controller
         $user->save();
 
 
-        return redirect(route('admin.dashboard'))->with('message','Hai reso $user->name redattore');
+        return redirect(route('admin.dashboard'))->with('message',"Hai reso $user->name redattore");
     }
 
     public function editTag(Request $request, Tag $tag){

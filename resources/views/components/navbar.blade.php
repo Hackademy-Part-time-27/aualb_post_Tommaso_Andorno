@@ -20,7 +20,7 @@
               <li class="nav-item"><a class="nav-link" href="{{route('revisor.dashboard')}}">Dashboard Revisore</a></li>
         @endif
         @if (Auth::user()->is_writer)
-              <li><a class="dropdown-item" href="{{route('writer.dashboard')}}">Dashboard Redattore</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{route('writer.dashboard')}}">Dashboard Redattore</a></li>
         @endif
                  
         <li class="nav-item dropdown">
