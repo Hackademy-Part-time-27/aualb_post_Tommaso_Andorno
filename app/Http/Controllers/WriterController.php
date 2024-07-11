@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Article;
 
 class WriterController extends Controller
 {
    
     public function dashboard(){
-        $articles = Auth::user()->articles()->orderBy('created_at', 'desc')->get();
         
-        $unrevisionedArticles = $articles->where('is_accepted', '===', FALSE);
-        $acceptedArticles = $articles->where('is_accepted', true);
-        $rejectedArticles = $articles->where('is_accepted', '===', 0);
+        
+        $unrevisionedArticles = Article::where("is_accepted", NULL)->get();
+        $acceptedArticles = Article::where("is_accepted", true)->get();
+        $rejectedArticles = Article::where("is_accepted", false)->get();
 
         return view('writer.dashboard',compact('unrevisionedArticles','acceptedArticles','rejectedArticles'));
     }
