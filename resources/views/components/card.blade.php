@@ -1,5 +1,5 @@
 <div class="card">
-    <img src="{{ Storage::url($image) }}" class="card-img-top">
+    <img src="{{ Storage::url($image) }}" alt="" class="card-img-top" style="height: 200px; width: 100%; object-fit: cover;">                <div class="text-center">
         
 <div class="card-body">
     <h5 class="card-title">{{ $title }}</h5>
@@ -19,7 +19,7 @@
     <span class="text-muted small fst-italic">Tempo di lettura {{$readDuration}} min</span>
 </div>
     <div class="card-footer text-muted d-flex justify-content-center align-items-center">
-        <p>Redatto il {{$data}} creato da <a href="{{$urlUser}}">{{$user}}</a></p>
+        <p>Redatto il {{$data}} da <a href="{{$urlUser}}">{{$user}}</a></p>
         
             <a href="{{$url}}" class="btn btn-outline-secondary">Leggi</a>
     </div>

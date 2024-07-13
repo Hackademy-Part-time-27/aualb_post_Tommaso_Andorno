@@ -26,8 +26,8 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="image" class="form-label">Immagine:</label>
-                        <input type="file" name="image" class="form-control" id="image">
+                        <label for="image" class="form-label">Immagine</label>
+                        <input type="file" name="image" class="form-control" id='image'>
                         @error('image')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -60,7 +60,7 @@
                         @enderror
                     </div>
                     <div class="mt-3 d-flex justify-content-center flex-column align-items-center">
-                        <button type="submit" class="btn btn-outline-secondary">Inserisci un articolo</button>
+                        <button type="submit" class="btn btn-outline-secondary">Inserisci articolo</button>
                         <a href="{{route('homepage')}}" class="text-secondary mt-2">Torna alla home</a>
                     </div>
                 </form>

@@ -28,8 +28,8 @@
                     </div>
                     <div class="mb-3">
                         <label>Immagine attuale</label>
-                        <img src="{{Storage::url($article->image)}}" alt="{{$article->title}}" class="w-50 d-flex">
-                    </div>
+                        <img src="{{ Storage::url($image) }}" alt="" class="card-img-top" style="height: 200px; width: 100%; object-fit: cover;">                <div class="text-center">
+                        </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">Nuova immagine</label>
                         <input type="file" name="image" class="form-control" id="image">
