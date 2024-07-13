@@ -20,23 +20,23 @@
                     </div>
                     <hr>
                     <p>{{$article->body}}</p>
-                    <div class="text-center">
-                        <a href="{{route('article.index')}}" class="btn btn-info text-white my-5">Vai alla lista degli articoli</a>
+                    <p>{{$article->body}}</p>
+                    @if (Auth::user() && Auth::user()->is_revisor)
+                    <div class="container my-5">
+                        <div class="row">
+                            <div class="col-12 d-flex justify-content-evenly">
+                              <form action="{{route('revisor.acceptArticle', $article)}}" method="POST">
+                                 @csrf
+                                     <button type="submit" class="btn btn-success text-white">Accetta articolo</button>
+                             </form>
+                             <form action="{{route('revisor.rejectArticle', $article)}}" method="POST">
+                                @csrf
+                                     <button type="submit" class="btn btn-danger text-white">Rifiuta articolo</button>
+                             </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="d-flex justify-content-between">
-                    <form>
-                        @if (Auth::user() && Auth::user()->is_revisor)
-                        <form action="{{route('revisor.acceptArticle', $article)}}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-success text-white">Accetta articolo</button>
-                        </form>
-                        <form action="{{route('revisor.rejectArticle', $article)}}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger text-white">Rifiuta articolo</button>
-                        </form>
-                        @endif
-                    </form>
-                    </div>
+                    @endif 
             </div>
         </div>
     </div>        
